@@ -12,16 +12,16 @@ namespace Calculator
 
             while (true)
             {
-                Console.WriteLine("Please choose opertaion to follow add,subtract,multiply or divide, you may write 'exit' to end the application");
+                Console.WriteLine("Please choose opertaion to start between ['+', '-', '*', '/'], Press '-1' to end the application");
 
                 string operation = Console.ReadLine();
 
-                if (operation.ToLower() == "add" || operation.ToLower() == "subtract")
+                if (operation.Trim() == "+" || operation.Trim() == "-")
                 {
 
                     while (true)
                     {
-                        Console.WriteLine("Please enter numbers to be calculated based on the choosen operation. Type 'calculate' to perform the operation.");
+                        Console.WriteLine("Please enter the numbers. Type 'calculate' to perform the operation.");
                         input = Console.ReadLine();
 
                         if (input.ToLower() == "calculate")
@@ -41,11 +41,11 @@ namespace Calculator
                     }
 
                     int sum = 0;   
-                    if(operation.ToLower() == "add")
+                    if(operation.Trim() == "+")
                     {
                         sum = Calculator.Add(numbers.ToArray());
                     }
-                    else if (operation.ToLower() == "subtract")
+                    else if (operation.Trim() == "-")
                     {
                         sum = Calculator.Substract(numbers.ToArray());
                     }
@@ -57,7 +57,7 @@ namespace Calculator
 
                 }
           
-                else if (operation.ToLower() == "multiply" || operation.ToLower() == "divide")
+                else if (operation.Trim() == "*" || operation.Trim() == "/")
                 {
                     Console.WriteLine("please enter the first number");
                     string input1 = Console.ReadLine();
@@ -67,7 +67,7 @@ namespace Calculator
                     float result = 0;
                     if (int.TryParse(input1, out int num1) && int.TryParse(input2, out int num2))
                     {
-                      result =  operation.ToLower() == "multiply" ? result = Calculator.Multiply(num1, num2)
+                      result =  operation.Trim() == "*" ? result = Calculator.Multiply(num1, num2)
                         : result = Calculator.Divide(num1, num2);
                     }
                     else
@@ -82,7 +82,7 @@ namespace Calculator
 
                 }
 
-                if (operation.ToLower() == "exit")
+                if (operation.Trim() == "-1")
                 {
                     break;
                 }
