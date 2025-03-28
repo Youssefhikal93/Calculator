@@ -21,7 +21,7 @@ A simple calculator application built with C# and .NET 8. This application allow
 To clone the repository, run the following command in your terminal:
 
 ```sh
-git clone git@github.com:youssefhikal93//Calculator.git
+git clone git@github.com:youssefhikal93//Calculator
 ``` 
 
 ### Open the Project
